@@ -1,0 +1,8 @@
+@misc{jia2023audiovisual,
+      title={The Audio-Visual Conversational Graph: From an Egocentric-Exocentric Perspective}, 
+      author={Wenqi Jia and Miao Liu and Hao Jiang and Ishwarya Ananthabhotla and James M. Rehg and Vamsi Krishna Ithapu and Ruohan Gao},
+      year={2023},
+      eprint={2312.12870},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
