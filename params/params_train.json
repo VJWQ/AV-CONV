@@ -1,0 +1,38 @@
+  {
+    "params": {
+      "run_params": {
+        "n_cpu": 16,
+        "n_gpu": 1,
+        "n_workers": 2
+      },
+      "model": {
+        "num_attn": 2,
+        "attn_type": "T_N_S",
+        "low_spatial_dim": false,
+        "pair_attn": "None",
+        "abla": false,
+        "temp_conv": "vanilla",
+        "Note": ""
+      },
+      "data": {
+        "visual_num_frames": 6,
+        "visual_sampling_rate": 1,
+        "audio_num_frames": 6,
+        "audio_sampling_rate": 1,
+        "clip_stride": 1,
+        "num_subjects": 4,
+        "image_size": [
+          420,
+          420
+        ],
+        "bbox_scale_factor": 2,
+        "data_path": "/home/wjia/code/avconv/data/auditory_attention",
+        "label_path": "/home/wjia/code/avconv/data/ego_exo_label"
+      },
+      "lr": 0.0001,
+      "log_path": "./ckpt",
+      "batch_size": 5,
+      "max_epochs": 10,
+      "mode": "train"
+    }
+  }

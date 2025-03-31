@@ -1,0 +1,41 @@
+  {
+    "params": {
+      "run_params": {
+        "n_cpu": 16,
+        "n_gpu": 1,
+        "n_workers": 1
+      },
+      "test_params": {
+        "dummy": {}
+      },
+      "model": {
+        "num_attn": 2,
+        "attn_type": "T_N_S",
+        "low_spatial_dim": false,
+        "pair_attn": "None",
+        "abla": false,
+        "temp_conv": "vanilla",
+        "Note": ""
+      },
+      "data": {
+        "visual_num_frames": 6,
+        "visual_sampling_rate": 1,
+        "audio_num_frames": 6,
+        "audio_sampling_rate": 1,
+        "clip_stride": 1,
+        "num_subjects": 4,
+        "image_size": [
+          420,
+          420
+        ],
+        "bbox_scale_factor": 2,
+        "use_local_data_path": true,
+        "data_path": "/home/wjia/code/avconv/data/auditory_attention",
+        "label_path": "/home/wjia/code/avconv/data/ego_exo_label"
+      },
+      "checkpoint_path": "./ckpt/2025-03-28_17-31-08/checkpoints/epoch_9_globaliter_20.pt",
+      "out_path": "./output",
+      "batch_size": 1,
+      "mode": "test"
+    }
+  }
