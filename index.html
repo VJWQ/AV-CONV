@@ -1,194 +1,345 @@
-<!--?xml version="1.0" encoding="UTF-8"?-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
-<title>AV-CONV</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="icon" type="image/png" href="assets/gt-logo.png">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Predict Ego-Exocentric Conversational Graph from egocentric audio-visual input.">
+  <meta name="keywords" content="avconv, egoexoconv, convgraph">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio-Visual Conversational Graph</title>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-    menuSettings: {zoom: "Double-Click", zscale: "300%"},
-    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    MathMenu: {showRenderer: false},
-    "HTML-CSS": {
-        availableFonts: ["TeX"],
-        preferredFont: "TeX",
-        imageFont: null
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
     }
-  });
-</script>
 
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/png" href="assets/gt-logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
+<body>
 
-<body><div id="header" class="header" align="center">
-<h1>The Audio-Visual Conversational Graph: <br/>
-    From an Egocentric-Exocentric Perspective </h1>
-</body>
+<section class="hero bg-section">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="title-wrapper">
+
+          <h1 class="title is-1 publication-title">
+            The Audio-Visual Conversational Graph: <br/>
+            From an Ego-Exocentric Perspective</h1>
 
 
-<body id="Home">
-  <header id="nav-wrapper">
 
-    
-  </header>
-  <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-    <tr style="padding:0px">
-    <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:1%;width:63%;vertical-align:middle">
-            <!-- <p style="text-align-last:justify"> -->
-            <p style="text-align:center">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
               <a href="https://vjwq.github.io/">Wenqi Jia</a><sup>1,2*</sup>,&nbsp;
-              <a href="https://aptx4869lm.github.io/">Miao Liu</a><sup>2</sup>,&nbsp;
+              <a href="https://aptx4869lm.github.io/">Miao Liu</a><sup>4</sup>,&nbsp;
               <a href="https://www.hao-jiang.net/">Hao Jiang</a>,<sup>2</sup>,&nbsp;
               <a href="https://www.ishwarya.me/">Ishwarya Ananthabhotla</a><sup>2</sup>,<br>
               <a href="https://rehg.org/">James M. Rehg</a><sup>3</sup>,&nbsp;
               <a href="https://www.vamsiithapu.com/">Vamsi Krishna Ithapu</a><sup>2</sup>,&nbsp;
               <a href="https://ruohangao.github.io/">Ruohan Gao</a><sup>2</sup>
-            </p>
-            </td>
-          </tr>
-    </tbody></table>
-    <div style="width:100%;text-align:center"><sup>1 </sup>Georgia Institute of Technology, <sup>2 </sup>Meta Reality Labs Research, <sup>3 </sup>UIUC</div>
-    <div style="width:100%;text-align:right"><small><i>* This work was done during Wenqi's internship at Reality Labs Research</i></small></div>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>Meta Reality Labs Research,</span>
+            <span class="author-block"><sup>3</sup>UIUC,</span>
+            <span class="author-block"><sup>4</sup>GenAI, Meta</span>
+            <div style="width:100%;text-align:right"><small><i>* This work was done during Wenqi's internship at Reality Labs</i></small></div>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Jia_The_Audio-Visual_Conversational_Graph_From_an_Egocentric-Exocentric_Perspective_CVPR_2024_paper.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/supplemental/Jia_The_Audio-Visual_Conversational_CVPR_2024_supplemental.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.12870"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Poster. -->
+              <span class="link-block">
+                <a href="assets/AVConv-poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/VJWQ/AV-CONV.git"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span><font color="#ABB0B8">Data</font></span>
+                  </a>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+
+  <div class="container is-max-desktop">
+    <div style="text-align: center;">
+        <img src="assets/teaser1.png"  style="width:70%;max-width:70%">
+        <img src="assets/teaser2.png"  style="width:70%;max-width:70%">
+
+      <h2 class="subtitle has-text-centered">
+
+        Our Ego-Exocentric Conversational Graph Prediction task jointly learns <br>
+        the egocentric conversational behaviors, and the exocentric conversational behaviors.
+
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The recent thriving development of research related to egocentric videos has provided a 
+            unique perspective for the study of conversational interactions, where both visual and 
+            audio signals play a crucial role. 
+          </p>
+          <p>
+            We introduce the Ego-Exocentric Conversational Graph Prediction problem, 
+            marking the first attempt to infer exocentric conversational interactions 
+            from egocentric videos. 
+            We propose a unified multi-modal framework---Audio-Visual Conversational Attention (AV-CONV), 
+            for the joint prediction of conversation behaviors---speaking and listening---for 
+            both the camera wearer as well as all other social partners present in the egocentric video. 
+            Specifically, we adopt the self-attention mechanism to model the representations across-time, 
+            across-subjects, and across-modalities. To validate our method, we conduct experiments on a 
+            challenging egocentric video dataset that includes multi-speaker and multi-conversation scenarios. 
+          </p>
+          <p>
+            Our results demonstrate the superior performance of our method compared to a series of baselines. 
+            We also present detailed ablation studies to assess the contribution of each component in our model. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img src="assets/model.png"  style="width:100%;max-width:100%">
+          <!-- Our model takes multiple egocentric frames and multi-channel audio signals.  -->
+          <p>
+            <b>(a)</b> For each frame, faces of social partners are cropped to serve as raw visual input, 
+            while their corresponding head positions are concatenated with audio inputs to generate positional 
+            audio signals. Visual and audio signals are encoded by two separate ResNet18 Backbones and are 
+            concatenated to produce Audio-Visual features for each cropped head. 
+          </p>
+          <p>
+            <b>(b)</b> After obtaining temporal Audio-Visual feature tubes of video length, they are flattened 
+            into a token to be fed into the Conversational Attention Module to produce augmented Single Head 
+            Feature feature. Egocentric Classifiers directly take them to predict Egocentric Edge Attributes, 
+            and pairs of these features are arbitrarily combined to generate pairwise audio-visual features to 
+            predict Exocentric Edge Attributes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demo Video</h2>
+        
 
         
-        <p style="text-align:center">
-          <a href="https://github.com/VJWQ/AV-CONV.git" style="font-size: 24px;"><font color="#ABB0B8">[Code]</font></a> 
-          <a href="assets/AVConv-paper.pdf" style="font-size: 24px;">[Paper]</a> 
-          <a href="assets/AVConv-supp.pdf" style="font-size: 24px;">[Suppl]</a> 
-          <a href="https://arxiv.org/abs/2312.12870" style="font-size: 24px;">[Arxiv]</a> 
-          <a href="" style="font-size: 24px;"><font color="#ABB0B8">[Data]</font></a> 
-          <a href="assets/avconv_bibtex.txt" style="font-size: 24px;">[Bibtex]</a> 
-          <!-- <a href="assets/EgoGAN_poster.pdf" style="font-size: 24px;">[poster]</a>  -->
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+  <tr>
+    <td>
+      <section id="Demo Video" style="padding-top: 80px; margin-top: -80px;">
+          <!-- <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Demo Video</h2> -->
+          <!-- <video muted autoplay loop style="width:25%;vertical-align:middle;"> -->
+            <p style="text-align:left;">
+              <b>Left</b>: Original input sample with audio <br>
+              <b>Right</b>: 5x slow motion input with predictions and ground truth label
+            </p>
+        <div>
+            <video controls="controls" style="width:24%;vertical-align:middle;">
+                <source src="assets/demos/regular_speed_video/1035.mp4" type="video/mp4">
+            </video>
+            <video controls="controls" style="width:74%;vertical-align:middle;">
+                <source src="assets/demos/slowmotion/1035_slow.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p style="text-align:left;">
+          Three speakers engaged in concurrent conversations, exhibiting pause-and-resume patterns. 
         </p>
 
-        <div style="text-align: center;">
-          <img src="assets/teaser.png"  style="width:600px;height:600px;">
+        <div>
+            <video controls="controls" style="width:24%;vertical-align:middle;">
+                <source src="assets/demos/regular_speed_video/933.mp4" type="video/mp4">
+            </video>
+            <video controls="controls" style="width:74%;vertical-align:middle;">
+            <source src="assets/demos/slowmotion/933_slow.mp4" type="video/mp4">
+            </video>
         </div>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle;">
-              <section id="Abstract" style="padding-top: 80px; margin-top: -80px;">
-                <!-- <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Abstract</h2> -->
-                In recent years, the thriving development of research related to egocentric videos has provided a unique perspective for the study of conversational interactions, where both visual and audio signals play a crucial role. While most prior work focus on learning about behaviors that directly involve the camera wearer, we introduce the Ego-Exocentric Conversational Graph Prediction problem, marking the first attempt to infer exocentric conversational interactions from egocentric videos. We propose a unified multi-modal framework---Audio-Visual Conversational Attention (AV-CONV), for the joint prediction of conversation behaviors---speaking and listening---for both the camera wearer as well as all other social partners present in the egocentric video. Specifically, we adopt the self-attention mechanism to model the representations across-time, across-subjects, and across-modalities. To validate our method, we conduct experiments on a challenging egocentric video dataset that includes multi-speaker and multi-conversation scenarios. Our results demonstrate the superior performance of our method compared to a series of baselines. We also present detailed ablation studies to assess the contribution of each component in our model. 
-                <!-- Our results demonstrate the superior performance of our method compared to a series of baselines. We also present detailed ablation studies to assess the contribution of each component in our model.  -->
-                <br>
-            </td>
-          </tr>
-        </tbody></table>
+        <p style="text-align:left;">
+          The yellow-boxed participant joins the conversation toward the end of the sequence.
+        </p>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <section id="Approach" style="padding-top: 80px; margin-top: -80px;">
-              <!-- <heading><b>Approach</b></heading> -->
-              <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Approach</h2>
-              <div style="text-align: center;">
-                <img src="assets/model.png"  style="width:100%;max-width:100%">
-              </div>
-              Our model takes multiple egocentric frames and multi-channel audio signals. <br><br> <b>(a)</b> For each frame, faces of social partners are cropped to serve as raw visual input, while their corresponding head positions are concatenated with audio inputs to generate positional audio signals. Visual and audio signals are encoded by two separate ResNet18 Backbones and are concatenated to produce Audio-Visual features for each cropped head. <br><br> <b>(b)</b> After obtaining temporal Audio-Visual feature tubes of video length, they are flattened into a token to be fed into the Conversational Attention Module to produce augmented Single Head Feature feature. Egocentric Classifiers directly take them to predict Egocentric Edge Attributes, and pairs of these features are arbitrarily combined to generate pairwise audio-visual features to predict Exocentric Edge Attributes.
+        <div>
+            <video controls="controls" style="width:24%;vertical-align:middle;">
+                <source src="assets/demos/regular_speed_video/825.mp4" type="video/mp4">
+            </video>
+            <video controls="controls" style="width:74%;vertical-align:middle;">
+            <source src="assets/demos/slowmotion/825_slow.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p style="text-align:left;">
+          The observer (ego agent) stops speaking in the latter part of the sequence.
+        </p>
 
-            </td>
-          </tr>
+        <video controls="controls" style="width:24%;vertical-align:middle;">
+            <source src="assets/demos/regular_speed_video/1032.mp4" type="video/mp4">
+        </video>
+        <video controls="controls" style="width:74%;vertical-align:middle;">
+          <source src="assets/demos/slowmotion/1032_slow.mp4" type="video/mp4">
+        </video>
+        <p style="text-align:left;">
+          The pink-boxed participant is not visible due to the limited egocentric field of view.
+        </p>
 
-        </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
 
-        
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <section id="Demo Video" style="padding-top: 80px; margin-top: -80px;">
-                  <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Demo Video</h2>
-                  <!-- <video muted autoplay loop style="width:25%;vertical-align:middle;"> -->
-                <div>
-                    <video controls="controls" style="width:24%;vertical-align:middle;">
-                        <source src="assets/demos/regular_speed_video/1035.mp4" type="video/mp4">
-                    </video>
-                    <video controls="controls" style="width:74%;vertical-align:middle;">
-                        <source src="assets/demos/slowmotion/1035_slow.mp4" type="video/mp4">
-                    </video>
-                </div>
+</div>
+</div>
+<!--/ Paper video. -->
+</div>
+</section>
 
-                <div>
-                    <video controls="controls" style="width:24%;vertical-align:middle;">
-                        <source src="assets/demos/regular_speed_video/933.mp4" type="video/mp4">
-                    </video>
-                    <video controls="controls" style="width:74%;vertical-align:middle;">
-                    <source src="assets/demos/slowmotion/933_slow.mp4" type="video/mp4">
-                    </video>
-                </div>
 
-                <div>
-                    <video controls="controls" style="width:24%;vertical-align:middle;">
-                        <source src="assets/demos/regular_speed_video/825.mp4" type="video/mp4">
-                    </video>
-                    <video controls="controls" style="width:74%;vertical-align:middle;">
-                    <source src="assets/demos/slowmotion/825_slow.mp4" type="video/mp4">
-                    </video>
-                </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @inproceedings{jia2024audio,
+        &nbsp; title={The Audio-Visual Conversational Graph: From an Egocentric-Exocentric Perspective},
+        &nbsp; author={Jia, Wenqi and Liu, Miao and Jiang, Hao and Ananthabhotla, Ishwarya and Rehg, James M and Ithapu, Vamsi Krishna and Gao, Ruohan},
+        &nbsp; booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+        &nbsp; year={2024}
+      }
+    </code></pre>
+  </div>
+</section>
 
-                <video controls="controls" style="width:24%;vertical-align:middle;">
-                    <source src="assets/demos/regular_speed_video/1032.mp4" type="video/mp4">
-                </video>
-                <video controls="controls" style="width:74%;vertical-align:middle;">
-                  <source src="assets/demos/slowmotion/1032_slow.mp4" type="video/mp4">
-                </video>
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-            </td>
-          </tr>
-        </tbody></table>
-<!-- 
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-            <tr>
-              <td>
-                <section id="Supplementary Video" style="padding-top: 80px; margin-top: -80px;">
-                    <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Supplementary Video</h2>
-                    <video controls="controls" style="width:80%;vertical-align:middle;">
-                    </video>
-              </td>
-            </tr>
-          </tbody></table> -->
+  </div>
+</section>
 
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-            <tr>
-              <td>
-                <section id="Bibtex" style="padding-top: 80px; margin-top: -80px;">
-                <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Bibtex</h2>
-                <p style="padding-bottom: 0.5em; overflow: auto;">If you want to cite our work, please use following BibTex:<br>
-                  <p>
-                  <code>
-                    @misc{jia2023audiovisual,<br>
-                      &nbsp; title={The Audio-Visual Conversational Graph: From an Egocentric-Exocentric Perspective},<br>
-                      &nbsp; author={Wenqi Jia and Miao Liu and Hao Jiang and Ishwarya Ananthabhotla and James M. Rehg and Vamsi Krishna Ithapu and Ruohan Gao},<br>
-                      &nbsp; year={2023},<br>
-                      &nbsp; eprint={2312.12870},<br>
-                      &nbsp; archivePrefix={arXiv},<br>
-                      &nbsp; primaryClass={cs.CV}<br>
-                    }
-                </code></p></p>
-              </td>
-            </tr>
-          </tbody></table><br>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <section id="Contact" style="padding-top: 80px; margin-top: -80px;">
-              <h2 class="ui center aligned header" style="font-size: 1.5em; font-weight: normal; margin-bottom: 0.3em; margin-top: 0.8em;">Contact</h2>
-              <ul>
-              <li>For questions about this paper, please contact wenqi dot jia at gatech dot edu. </li>
-              </ul>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
 </body>
 </html>
