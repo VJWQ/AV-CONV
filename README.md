@@ -42,7 +42,7 @@ conda activate avconv
 3. **Update Paths in Parameter Files**  
    In both training and evaluation configs (`params_train.json`, `params_test.json`), make sure the following fields are set correctly:
 
-   ```json
+   ```
    data_path: "../data/av_data"
    label_path: "../data/av_label"
    ```

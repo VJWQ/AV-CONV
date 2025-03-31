@@ -29,11 +29,10 @@
           420
         ],
         "bbox_scale_factor": 2,
-        "use_local_data_path": true,
-        "data_path": "/home/wjia/code/avconv/data/auditory_attention",
-        "label_path": "/home/wjia/code/avconv/data/ego_exo_label"
+        "data_path": "/replace/with/your/path",
+        "label_path": "/replace/with/your/path"
       },
-      "checkpoint_path": "./ckpt/2025-03-28_17-31-08/checkpoints/epoch_9_globaliter_20.pt",
+      "checkpoint_path": "./ckpt/replace/with/your/path",
       "out_path": "./output",
       "batch_size": 1,
       "mode": "test"

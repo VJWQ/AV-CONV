@@ -26,8 +26,8 @@
           420
         ],
         "bbox_scale_factor": 2,
-        "data_path": "/home/wjia/code/avconv/data/auditory_attention",
-        "label_path": "/home/wjia/code/avconv/data/ego_exo_label"
+        "data_path": "/replace/with/your/path",
+        "label_path": "/replace/with/your/path"
       },
       "lr": 0.0001,
       "log_path": "./ckpt",
