@@ -71,8 +71,7 @@ python test_net.py
 - Predictions will be saved at: `./output/{ckpt_log}_inference/preds.pkl`
 
 ## ⚠️ Disclaimer
-This implementation was developed based solely on the descriptions in the original paper.  
-It does not contain any proprietary code, internal tools, or unpublished resources from Meta. All components—including architecture, data loaders, and configurations—were reproduced independently for academic and community research purposes.
+This implementation does not contain any proprietary code, internal tools, or unpublished resources from Meta. All components—including architecture, data loaders, and configurations—were reproduced independently for academic and community research purposes.
 
 ## 📚 Citation
 If you find our work is useful for your research, please cite:   
